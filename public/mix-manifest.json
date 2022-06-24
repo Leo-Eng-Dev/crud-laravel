@@ -1,4 +1,6 @@
 {
-    "/assets/css/app.css": "/assets/css/app.css?id=41b60402ec6c31d9d2a6f15184b8493c",
-    "/assets/js/app.js": "/assets/js/app.js?id=a46bd75e67f070afea2cda7abf86474c"
+    "/assets/css/app.css": "/assets/css/app.css?id=d41d8cd98f00b204e9800998ecf8427e",
+    "/assets/css/bootstrap.css": "/assets/css/bootstrap.css?id=94994c66fec8c3468b269dc0cc242151",
+    "/assets/js/app.js": "/assets/js/app.js?id=0cc4f81e543e2940124f6b6d9df81f9e",
+    "/assets/js/bootstrap.js": "/assets/js/bootstrap.js?id=259e416ef6833be43801b8b68a93b008"
 }

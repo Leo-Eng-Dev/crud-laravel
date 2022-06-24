@@ -2,19 +2,32 @@
 
 use Illuminate\Support\Facades\Route;
 
-// index
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name('index');
+//
+Route::namespace('App\Http\Controllers')->group(function() {
 
-// formulário de cadastro - [C]reate
-Route::get('cadastro', 'App\Http\Controllers\HomeController@register')->name('register');
-Route::post('cadastro/registro', 'App\Http\Controllers\HomeController@confirm_register')->name('confirm.register');
+    // index
+    Route::get('/', 'HomeController@index')->name('index');
 
-// listar usuários (todos) - [R]ead
-Route::get('listar/todos', 'App\Http\Controllers\HomeController@list')->name('list.users');
+    // formulário de cadastro - [C]reate
+    Route::get('cadastro', 'HomeController@register')->name('register');
+    Route::post('cadastro/registro', 'HomeController@confirm_register')->name('confirm.register');
 
-// editar usuário - [U]pdate
-Route::get('editar/{id}', 'App\Http\Controllers\HomeController@edit')->name('edit.id');
-Route::post('formulario/editar/{id}', 'App\Http\Controllers\HomeController@form_edit')->name('form.edit.id');
+    // listar usuários (todos) - [R]ead
+    Route::get('listar/todos', 'HomeController@list')->name('list.users');
 
-// deletar usuário - [D]elete
-Route::get('deletar/{id}', 'App\Http\Controllers\HomeController@delete')->name('delete');
+    // editar usuário - [U]pdate
+    Route::get('editar/{id}', 'HomeController@edit')->name('edit.id');
+    Route::post('formulario/editar/{id}', 'HomeController@form_edit')->name('form.edit.id');
+
+    // deletar usuário - [D]elete
+    Route::get('deletar/{id}', 'HomeController@delete')->name('delete');
+});
+
+
+// api
+Route::namespace('App\Http\Controllers\API')->group(function() {
+
+    Route::get('api', 'ApiController@index')->name('api.index');
+
+    Route::get('api/api-exemplo', 'ApiController@__invoke')->name('api.exemplo');
+});

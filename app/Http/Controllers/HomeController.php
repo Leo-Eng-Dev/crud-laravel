@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterValidate;
 use App\Models\Contato;
 use Illuminate\Http\Request;
 
@@ -17,26 +18,28 @@ class HomeController extends Controller
         return view('register');
     }
 
-    public function confirm_register(Request $request)
+    public function confirm_register(RegisterValidate $request)
     {
-        $user = new Contato();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->age = $request->age;
-        $user->country = $request->country;
-        $user->save();
+        // $user = new Contato();
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->age = $request->age;
+        // $user->country = $request->country;
+        // $user->save();
 
-        return view('index');
+        Contato::create($request->all());
+
+        return redirect()->route('list.users');
     }
 
-    public function list(Request $request)
+    public function list()
     {
         $users = Contato::all();
         // dd($users);
         return view('listar', ['users' => $users]);
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
         $userId = Contato::findOrFail($id);
 
