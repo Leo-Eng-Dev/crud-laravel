@@ -12,9 +12,9 @@
                 <div class="col-sm-3">
                     <a href="{{ route('list.users') }}" class="btn btn-dark my-3">Ver lista de Usuários</a>
                 </div>
-                <div class="col-sm-2">
+                {{-- <div class="col-sm-2">
                     <a href="{{ route('api.index') }}" class="btn btn-dark my-3">API</a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

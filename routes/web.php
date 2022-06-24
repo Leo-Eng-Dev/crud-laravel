@@ -21,6 +21,9 @@ Route::namespace('App\Http\Controllers')->group(function() {
 
     // deletar usuário - [D]elete
     Route::get('deletar/{id}', 'HomeController@delete')->name('delete');
+
+    // buscar
+    Route::any('listar/search', 'HomeController@search')->name('lista.search');
 });
 
 

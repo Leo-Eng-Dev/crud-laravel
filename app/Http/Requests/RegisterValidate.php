@@ -26,7 +26,7 @@ class RegisterValidate extends FormRequest
         return [
             'name' => 'required | max:160 | min:3',
             'email' => 'required | email | max:160 | min:8',
-            'age' => 'required | number | min:6',
+            'age' => 'required',
             'country' => 'required | max:40 | min:2',
         ];
     }

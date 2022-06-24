@@ -1,5 +1,5 @@
 <footer class="w-100 text-center">
-    @Copyright Leandro Fernandes - 2022
+    @Copyright Leandro Fernandes - {{ date('Y')}}
 </footer>
 
 
